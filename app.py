@@ -12,6 +12,7 @@ df = load_data(file_path)
 # Initialize dash app with bootstrap theme
 load_figure_template('morph')
 app = Dash(__name__, external_stylesheets=[dbc.themes.MORPH])
+server = app.server  # Expose the server for Gunicorn
 
 # Filter data for each position
 df_rb = df[df['position'] == 'RB']
